@@ -27,11 +27,12 @@ func init() {
 	db = client.Database(config.Config.DatabaseName)
 }
 
-func GetReviewPhrases() []models.ReviewPhrase {
-	// COLLNAME Collection name
-	const COLLNAME = "review_phrases"
+func GetReviewPhrases(frequencySortOrder SortOrder) []models.ReviewPhrase {
+	const CollectionName = "review_phrases"
 
-	cur, err := db.Collection(COLLNAME).Find(context.Background(), bson.D{{}}, nil)
+	options := options.Find().SetSort(bson.D{{"frequency", frequencySortOrder}})
+
+	cur, err := db.Collection(CollectionName).Find(context.Background(), bson.D{{}}, options)
 	if err != nil {
 		log.Fatal(err)
 	}
