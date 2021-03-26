@@ -27,10 +27,10 @@ func init() {
 	db = client.Database(config.Config.DatabaseName)
 }
 
-func GetReviewPhrases(frequencySortOrder SortOrder) []models.ReviewPhrase {
+func GetReviewPhrases(frequencySortOrder SortOrder, page int64, limit int64) []models.ReviewPhrase {
 	const CollectionName = "review_phrases"
 
-	options := options.Find().SetSort(bson.D{{"frequency", frequencySortOrder}})
+	options := _getSortAndFilterOptions(frequencySortOrder, page, limit)
 
 	cur, err := db.Collection(CollectionName).Find(context.Background(), bson.D{{}}, options)
 	if err != nil {
@@ -46,9 +46,18 @@ func GetReviewPhrases(frequencySortOrder SortOrder) []models.ReviewPhrase {
 		}
 		elements = append(elements, elem)
 	}
+
 	if err := cur.Err(); err != nil {
 		log.Fatal(err)
 	}
+
 	cur.Close(context.Background())
 	return elements
+}
+
+func _getSortAndFilterOptions(frequencySortOrder SortOrder, page int64, limit int64) interface{} {
+	options := options.Find().SetSort(bson.D{{"frequency", frequencySortOrder}})
+	options.SetSkip((page - 1) * limit)
+	options.SetLimit(limit)
+	return options
 }
