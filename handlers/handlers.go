@@ -3,10 +3,10 @@ package handlers
 import (
 	"encoding/json"
 	"net/http"
-	"phrases-server/dao"
+	"phrases-server/database"
 )
 
 func GetReviewPhrasesEndpoint(w http.ResponseWriter, r *http.Request) {
-	payload := dao.GetReviewPhrases()
+	payload := database.GetReviewPhrases()
 	json.NewEncoder(w).Encode(payload)
 }
