@@ -2,7 +2,6 @@ package dao
 
 import (
 	"context"
-	"fmt"
 	"log"
 	"phrases-server/config"
 	"phrases-server/models"
@@ -26,7 +25,6 @@ func init() {
 	}
 	// Collection types can be used to access the models
 	db = client.Database(config.Config.DatabaseName)
-	fmt.Println(db.ListCollectionNames(context.Background(), bson.D{{}}))
 }
 
 func GetReviewPhrases() []models.ReviewPhrase {

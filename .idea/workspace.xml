@@ -2,17 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="edda9b3b-cf28-4406-8823-829b0a1ea3f0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/config/config.development.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/configuration.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dao/dao.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/handlers/handlers.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/reviewPhrase.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/dao.go" beforeDir="false" afterPath="$PROJECT_DIR$/dao/dao.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/reviewPhrase.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/reviewPhrase.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,16 +70,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/dao/dao.go</url>
-          <line>35</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
